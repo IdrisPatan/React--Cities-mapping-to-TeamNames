@@ -16,13 +16,13 @@ class App extends Component {
             }
         }
         this._onChange = this._onChange.bind(this)
-        this._onSubmit = this._onSubmit.bind(this)
+        //this._onSubmit = this._onSubmit.bind(this)
     }
 
-    _onSubmit(event) {
-        event.preventDefault()
-        console.log(event.target.cityName.value)
-    }
+    // // _onSubmit(event) {
+    //     //event.preventDefault()
+    //     // console.log(event.target.value)
+    // }
 
     _onChange(event){
         this.setState({
@@ -33,10 +33,11 @@ class App extends Component {
     render() {
     return (
       <div className="App">
-          <form onSubmit={this._onSubmit}>
+          {/*<form onSubmit={this._onSubmit}>*/}
               <h1> What's your favorite city?</h1>
-              <input id="cityName" type="text" name="cityName" value={this.state.value} onChange={this._onChange}/>
-          </form>
+              <input /*id="cityName" type="text" name="cityName" value={this.state.value}*/
+                  onChange={this._onChange} />
+          {/*</form>*/}
           {inputName(this.state.cityName)}
       </div>
     );
