@@ -14,6 +14,12 @@ class App extends Component {
                 dallas: 'Cowboys',
                 chicago: 'Chicago Bulls'
             }
+
+            teamsLogo:
+                {
+                    dallas: 'cowboys'
+                    chicago: 'bulls'
+                }
         }
         this._onChange = this._onChange.bind(this)
         //this._onSubmit = this._onSubmit.bind(this)
