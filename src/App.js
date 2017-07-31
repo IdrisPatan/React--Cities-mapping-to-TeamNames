@@ -15,19 +15,19 @@ class App extends Component {
                 chicago: 'Chicago Bulls'
             }
         }
+        this._onChange = this._onChange.bind(this)
         this._onSubmit = this._onSubmit.bind(this)
     }
 
     _onSubmit(event) {
-
         event.preventDefault()
-        this.setState({
-            cityName:this.state.teams[event.target.cityName.value.toLowerCase()]
-
-        })
         console.log(event.target.cityName.value)
+    }
 
-
+    _onChange(event){
+        this.setState({
+            cityName:this.state.teams[event.target.value.toLowerCase()]
+        })
     }
 
     render() {
@@ -35,7 +35,7 @@ class App extends Component {
       <div className="App">
           <form onSubmit={this._onSubmit}>
               <h1> What's your favorite city?</h1>
-              <input id="cityName" type="text" name="cityName"/>
+              <input id="cityName" type="text" name="cityName" value={this.state.value} onChange={this._onChange}/>
           </form>
           {inputName(this.state.cityName)}
       </div>
